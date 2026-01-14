@@ -29,7 +29,7 @@ int stringCompare(char a[], char b[]);
 void stringCopy(char d[], char s[]);
 
 /* ---------- Grading ---------- */
-void assignGrade(student *s);          // overall grade (optional)
+void assignGrade(student *s);          // overall grade
 int gradePoint(char grade[]);           // NEW: grade → grade point
 
 /* ---------- Display ---------- */
