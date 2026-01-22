@@ -1,7 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#define MAX 100
+#define MAX 1000
 #define SUBJECTS 5
 
 typedef struct {
@@ -15,7 +15,7 @@ typedef struct {
     int credits[SUBJECTS];      // credits for each subject
     char subGrade[SUBJECTS][3]; // grade per subject (O, A+, A...)
 
-    char grade[3];              // overall grade (optional)
+    char grade[3];              // overall grade 
     float cgpa;                 // final CGPA
 } student;
 

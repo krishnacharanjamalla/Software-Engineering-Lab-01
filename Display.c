@@ -1,11 +1,12 @@
 #include "Display.h"
-
-void display(student s[], int count){
+#include "String_Functions.h"
+#include <stdio.h>
+void Display(student s[], int count){
     float avg = 0;
     float high = s[0].percent;
     float low  = s[0].percent;
 
-    int g[8] = {0};   // O, A+, A, B+, B, C, D, F
+    int g[8] = {0};   
 
     printf("\n-------------------------------------------------------------------------------------------------\n");
     printf("ID\tName\tS1\tS2\tS3\tS4\tS5\tTotal\t\tPercentage\tGrade\tCGPA\n");
@@ -15,7 +16,6 @@ void display(student s[], int count){
 
         printf("%s\t%s\t", s[i].id, s[i].name);
 
-        // Print marks of each subject (minor + major) 
         for(int j = 0; j < SUBJECTS; j++){
             printf("%d\t",                
                 s[i].marks[j][0]+
@@ -33,7 +33,6 @@ void display(student s[], int count){
         if(s[i].percent > high) high = s[i].percent;
         if(s[i].percent < low)  low  = s[i].percent;
 
-        // Grade count 
         if(stringCompare(s[i].grade,"O")) g[0]++;
         else if(stringCompare(s[i].grade,"A+")) g[1]++;
         else if(stringCompare(s[i].grade,"A")) g[2]++;
@@ -46,7 +45,6 @@ void display(student s[], int count){
 
     printf("-------------------------------------------------------------------------------------------------\n");
 
-    /* Statistics */
     printf("Class Average Percentage : %.2f\n", avg / count);
     printf("Highest Percentage       : %.2f\n", high);
     printf("Lowest Percentage        : %.2f\n", low);

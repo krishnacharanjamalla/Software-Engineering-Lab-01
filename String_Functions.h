@@ -1,11 +1,8 @@
-#ifndef GRADING_H
-#define GRADING_H
-	
-#include "student.h"
+#ifndef STRING_FUNCTIONS_H
+#define STRING_FUNCTIONS_H
 
+int stringCompare( char a[],  char b[]);
+void stringCopy(char d[],  char s[]);
 
-int stringCompare(char a[], char b[]);
-void stringCopy(char d[], char s[]);
-
-
-#endif                                                                                                                                                    
+#endif
+                                                                                                                                                  

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "student.h"
-
+#include "Preprocessing.h"
+#include "Grading.h"
+#include "Display.h"
 int main(int argc,char *argv[]){
     if(argc < 2){
         printf("Please check the input files are provided\n");
@@ -18,7 +20,6 @@ int main(int argc,char *argv[]){
 
     while(fscanf(f,"%s %s", students[count].id, students[count].name) == 2){
 
-        // ID & name validation
         if(!ID_Check(students[count].id))
             continue;
 
@@ -39,26 +40,22 @@ int main(int argc,char *argv[]){
                 break;
             }
 
-            // Range check
             if(minor < 0 || minor > 40 || major < 0 || major > 60){
                 ok = 0;
             }
 
-            // Store TOTAL marks per subject (0–100)
             students[count].marks[i][0] = minor + major;
-            students[count].marks[i][1] = 0;   // unused, keep safe
+            students[count].marks[i][1] = 0;   
 
             students[count].total += students[count].marks[i][0];
         }
 
         if(!ok){
-            // discard this student completely
             continue;
         }
 
         students[count].percent = students[count].total / (float)SUBJECTS;
 
-        // Grade + CGPA
         assignGrade(&students[count]);
 
         count++;
@@ -71,6 +68,6 @@ int main(int argc,char *argv[]){
         return 0;
     }
 
-    display(students, count);
+    Display(students, count);
     return 0;
 }
