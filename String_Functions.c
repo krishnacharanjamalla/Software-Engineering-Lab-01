@@ -1,5 +1,4 @@
-
-#include "student.h"
+#include "String_Functions.h"
 
 int stringCompare(char a[], char b[]){
     int i=0;

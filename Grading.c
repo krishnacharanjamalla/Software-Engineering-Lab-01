@@ -1,4 +1,4 @@
-#include "student.h"
+#include "Grading.h"
 
 // ---------- Grade ----------
 int gradePoint(char grade[]){

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "student.h"
+#include "Display.h"
 
 void display(student s[], int count){
     float avg = 0;
@@ -18,7 +17,7 @@ void display(student s[], int count){
 
         // Print marks of each subject (minor + major) 
         for(int j = 0; j < SUBJECTS; j++){
-            printf("%d\t",
+            printf("%d\t",                
                 s[i].marks[j][0]+
                 s[i].marks[j][1]);
         }

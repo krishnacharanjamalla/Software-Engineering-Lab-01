@@ -19,20 +19,8 @@ typedef struct {
     float cgpa;                 // final CGPA
 } student;
 
-/* ---------- Preprocessing ---------- */
-int ID_Check(char id[]);
-int Name_Check(char name[]);
-int Duplicate_Check(student s[], int count, char id[]);
 
-/* ---------- String Functions ---------- */
-int stringCompare(char a[], char b[]);
-void stringCopy(char d[], char s[]);
 
-/* ---------- Grading ---------- */
-void assignGrade(student *s);          // overall grade
-int gradePoint(char grade[]);           // NEW: grade → grade point
 
-/* ---------- Display ---------- */
-void display(student s[], int count);
 
 #endif

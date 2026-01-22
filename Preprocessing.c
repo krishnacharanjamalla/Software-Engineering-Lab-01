@@ -1,5 +1,4 @@
-
-#include "student.h"
+#include "Preprocessing.h"
 
 int ID_Check(char id[]){
     for(int i = 0; id[i] != '\0'; i++){
